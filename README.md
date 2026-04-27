@@ -491,6 +491,7 @@ tar -czf benchmark-final-report.tar.gz benchmark-final-report
 Ensuite vous envoyez le fichier compressé à l'IA pour analyse:
 benchmark-final-report.tar.gz
 
+Vous pouvez aussi envoyer **le dossier complet** qui contiendra le code source.
 
 ---
 
