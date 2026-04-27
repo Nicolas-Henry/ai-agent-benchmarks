@@ -257,6 +257,60 @@ Commentaire :
 
 ---
 
+# Qualité du code généré
+
+## Appréciation globale
+
+La qualité du code généré est bonne pour le périmètre du benchmark. Le projet final reste simple, lisible et cohérent avec l’objectif pédagogique de la série.
+
+Le modèle n’a pas sur-complexifié l’application : il a progressivement fait évoluer une calculatrice PHP minimale vers une petite CLI structurée, sans introduire de framework ni de dépendance externe inutile.
+
+## Points positifs
+
+- Code PHP simple et lisible.
+- Nommage clair des classes et méthodes.
+- Séparation correcte des responsabilités :
+  - `Calculator` pour les opérations mathématiques ;
+  - `CalculatorCommand` pour la logique CLI ;
+  - `HistoryRepository` pour la persistance JSON.
+- Refactors effectués sans casser le comportement existant.
+- Gestion correcte des erreurs principales : division par zéro, arguments invalides, JSON corrompu.
+- Utilisation pertinente de fonctionnalités PHP modernes comme `array_is_list()`.
+- Pas de dépendance externe inutile.
+- Tests ajoutés progressivement avec une bonne couverture fonctionnelle.
+- README cohérent avec l’état final du projet.
+
+## Points perfectibles
+
+- Le mini-framework de tests maison reste adapté au benchmark, mais deviendrait limité si le projet grossissait.
+- La logique CLI reste encore relativement concentrée dans `CalculatorCommand`.
+- Le format des entrées d’historique reste un tableau associatif simple, sans objet dédié type `HistoryEntry`.
+- La validation métier de l’historique reste minimale : elle rend le système robuste, mais ne valide pas finement chaque champ.
+- Certains choix sont pragmatiques plutôt que strictement industriels, ce qui est acceptable pour ce benchmark.
+- La gestion des permissions Docker / fichiers générés pourrait être améliorée dans un contexte réel.
+
+## Évaluation
+
+| Critère | Note | Commentaire |
+|---|---:|---|
+| Lisibilité | 4.5/5 | Code clair, facile à suivre. |
+| Simplicité | 4.5/5 | Pas de sur-ingénierie excessive. |
+| Architecture | 4.5/5 | Responsabilités bien séparées. |
+| Maintenabilité | 4/5 | Bonne base, mais tests et CLI pourraient être mieux modularisés. |
+| Robustesse | 4.5/5 | Bons cas limites couverts. |
+| Style PHP | 4/5 | Correct et moderne, sans sophistication inutile. |
+| Dette technique | 4/5 | Dette faible pour un mini projet, mais quelques limites assumées. |
+
+## Verdict qualité du code
+
+La qualité du code est **bonne à très bonne** pour un petit projet PHP de benchmark.
+
+Le modèle produit un code exploitable, lisible, testé et correctement structuré. Il ne se contente pas de faire passer les tests : il améliore progressivement l’architecture au fil des prompts.
+
+Pour un projet réel plus important, une revue humaine resterait nécessaire, notamment sur la modularisation des tests, la gestion des objets métier et les questions d’environnement Docker. Mais pour le périmètre de cette série, la qualité du code généré est clairement satisfaisante.
+
+---
+
 # Points forts observés
 
 ```text
