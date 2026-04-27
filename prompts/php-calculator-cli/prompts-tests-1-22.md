@@ -106,7 +106,7 @@ Le benchmark est prévu pour un environnement :
 - projet dans un dossier dédié, par exemple :
 
 ```bash
-~/dev/project1
+~/dev/bench-php-calculator-cli
 ```
 
 ## Fichiers attendus avant le test 1
