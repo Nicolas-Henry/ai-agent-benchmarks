@@ -5,6 +5,7 @@
 | Champ | Valeur |
 |---|---|
 | Série de benchmark | `php-calculator-cli` |
+| Auteur du test : Nicolas HENRY |
 | Date du test | 2026-04-27 |
 | Agent utilisé | Claude Code |
 | Modèle utilisé | `deepseek-v4-flash:cloud` |
@@ -53,6 +54,7 @@ Il reste quelques points à surveiller pour une publication ou une comparaison s
 | Catégorie | Note /5 | Commentaire |
 |---|---:|---|
 | Génération de code | 4.5 | Code simple, lisible et adapté au périmètre. |
+| Qualité du code | 4.3 | Code propre, maintenable pour le périmètre, avec quelques limites normales pour un mini projet. |
 | Respect des consignes | 4.5 | Très bon respect global. Quelques écarts mineurs de reporting. |
 | Usage Docker | 5 | Les tests finaux et les entrées du rapport utilisent Docker. |
 | Tests | 4.5 | Bonne couverture progressive, 44 PASS finaux. |
@@ -169,6 +171,67 @@ La classe gère :
 - limite à 50 entrées par défaut ;
 - limite configurable via constructeur ;
 - vidage de l’historique.
+---
+
+# Qualité du code généré
+
+## Appréciation globale
+
+La qualité du code généré est **bonne à très bonne** pour le périmètre du benchmark.
+
+Le projet final reste simple, lisible et cohérent avec l’objectif pédagogique de la série. Le modèle n’a pas sur-complexifié l’application : il a progressivement fait évoluer une calculatrice PHP minimale vers une petite CLI structurée, testée et documentée, sans introduire de framework ni de dépendance externe inutile.
+
+Le code produit n’est pas seulement fonctionnel : il montre aussi une amélioration progressive de l’architecture au fil des prompts, notamment avec l’extraction de `HistoryRepository`, puis de `CalculatorCommand`.
+
+## Points positifs
+
+- Code PHP simple et lisible.
+- Nommage clair des classes, méthodes et responsabilités.
+- Séparation correcte des responsabilités :
+  - `Calculator` pour les opérations mathématiques ;
+  - `CalculatorCommand` pour la logique CLI ;
+  - `HistoryRepository` pour la persistance JSON.
+- Refactors effectués sans casser le comportement existant.
+- Gestion correcte des erreurs principales :
+  - division par zéro ;
+  - arguments CLI invalides ;
+  - commande inconnue ;
+  - historique absent, vide ou corrompu.
+- Utilisation pertinente de fonctionnalités PHP modernes comme `array_is_list()`.
+- Pas de dépendance externe inutile.
+- Composer utilisé uniquement pour l’autoload PSR-4.
+- Tests ajoutés progressivement avec une bonne couverture fonctionnelle.
+- README cohérent avec l’état final du projet.
+
+## Points perfectibles
+
+- Le mini-framework de tests maison reste adapté au benchmark, mais deviendrait limité si le projet grossissait.
+- La logique CLI reste encore relativement concentrée dans `CalculatorCommand`.
+- Le format des entrées d’historique reste un tableau associatif simple, sans objet dédié comme `HistoryEntry`.
+- La validation métier de l’historique reste minimale : elle rend le système robuste, mais ne valide pas finement chaque champ.
+- Les tests CLI utilisent beaucoup d’exécutions de sous-processus, ce qui est acceptable ici mais pourrait devenir lent sur un projet plus important.
+- Certains choix sont pragmatiques plutôt que strictement industriels, ce qui est acceptable pour ce benchmark.
+- La gestion des permissions Docker / fichiers générés pourrait être améliorée dans un contexte réel.
+
+## Évaluation
+
+| Critère | Note | Commentaire |
+|---|---:|---|
+| Lisibilité | 4.5/5 | Code clair, facile à suivre, noms explicites. |
+| Simplicité | 4.5/5 | Pas de sur-ingénierie excessive. |
+| Architecture | 4.5/5 | Responsabilités bien séparées après les refactors. |
+| Maintenabilité | 4/5 | Bonne base, mais tests et CLI pourraient être mieux modularisés si le projet grossit. |
+| Robustesse | 4.5/5 | Bons cas limites couverts, notamment JSON absent/vide/corrompu. |
+| Style PHP | 4/5 | Style correct, moderne et cohérent avec un mini projet PHP 8.4. |
+| Dette technique | 4/5 | Dette faible pour un projet pédagogique, quelques limites assumées. |
+
+## Verdict qualité du code
+
+Le modèle produit un code exploitable, lisible, testé et correctement structuré.
+
+Il ne se contente pas de faire passer les tests : il améliore progressivement l’architecture au fil des prompts. Le résultat final est propre pour une petite application CLI PHP, avec une séparation claire entre calcul, orchestration CLI et persistance.
+
+Pour un projet réel plus important, une revue humaine resterait nécessaire, notamment sur la modularisation des tests, la représentation des entrées d’historique et les questions d’environnement Docker. Mais pour le périmètre de cette série, la qualité du code généré est clairement satisfaisante.
 
 ---
 
