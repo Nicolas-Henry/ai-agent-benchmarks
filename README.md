@@ -475,6 +475,23 @@ results/php-calculator-cli/codex-gpt-5-5.md
 results/php-calculator-cli/aider-qwen3-coder-480b-cloud.md
 ```
 
+Pour cela, vous pouvez utiliser une IA propriétaire comme ChatGpt (5.5) ou Claude avec la procédure suivante
+
+```
+mkdir -p benchmark-final-report
+
+cp rapport.log benchmark-final-report/rapport.log
+git log --oneline --reverse > benchmark-final-report/git-log.txt
+git status > benchmark-final-report/git-status.txt
+docker compose run --rm php php tests/CalculatorTest.php > benchmark-final-report/final-tests.txt
+
+tar -czf benchmark-final-report.tar.gz benchmark-final-report
+```
+
+Ensuite vous envoyez le fichier compressé à l'IA pour analyse:
+benchmark-final-report.tar.gz
+
+
 ---
 
 # 15. Exemple de structure finale du projet testé
