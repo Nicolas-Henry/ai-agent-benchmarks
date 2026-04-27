@@ -293,6 +293,8 @@ L’agent doit ensuite répondre qu’il attend le prompt du test à exécuter.
 
 # 9. Lancer le test 1
 
+## Version manuelle (pour tester manuellement mais passer à la rubrique Version Auto pour aller plus vite)
+
 Ouvrir le fichier de prompts :
 
 ```bash
@@ -325,6 +327,11 @@ git commit -m "test01: create basic calculator project"
 8. afficher le hash du commit final.
 
 ---
+## Version Auto
+
+Ecrire simplement "Faire le test 1"
+
+L'agent saura normalement le récupéer via le dépôt local (prompts/php-calculator-cli/prompts-benchmark-agents-ia-php-tests-1-22.md) spécifié dans le prompt d'initialisation.
 
 # 10. Vérifier après le test 1
 
@@ -350,14 +357,14 @@ Le working tree doit être propre.
 
 Répéter le même fonctionnement pour chaque test :
 
-1. envoyer uniquement le prompt du test suivant ;
+1. envoyer uniquement le prompt du test suivant ; => en Auto écrire simplement "Faire le test 2" 
 2. laisser l’agent travailler ;
 3. vérifier le résultat ;
 4. vérifier `rapport.log` ;
 5. vérifier le commit ;
-6. passer au test suivant.
+6. passer au test suivant. (Prompt : "Faire le test 3") etc ...
 
-Exemple :
+Exemple de prompt (en manuel) :
 
 ```text
 Test 2 — Ajouter subtract()
