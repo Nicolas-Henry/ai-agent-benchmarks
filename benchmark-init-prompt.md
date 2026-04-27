@@ -299,7 +299,19 @@ cp ai-agent-benchmarks/templates/rapport-log-template.md /chemin/du/projet/rappo
 
 3. Envoyer le prompt d’initialisation à l’agent.
 
-4. Envoyer ensuite les tests un par un depuis le fichier de prompts de la série.
+4. Envoyer ensuite les tests un par un depuis le fichier de prompts de la série (ou en utilisant la lecture du prompt (fichier .md) dans le dépôt)
+   exemple:
+```Le fichier des prompts est disponible localement ici :
+
+/home/nicolas/dev/ai-agent-benchmarks/prompts/php-calculator-cli/prompts-tests-1-22.md
+
+Lis ce fichier pour connaître les tests 1 à 22.
+
+Important :
+- n’exécute qu’un seul test à la fois ;
+- attends que je te dise quel test lancer ;
+- pour l’instant, lis seulement le Test 1 et exécute uniquement le Test 1.
+```
 
 ## Après la série complète
 
