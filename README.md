@@ -492,6 +492,24 @@ Ensuite vous envoyez le fichier compressé à l'IA pour analyse:
 benchmark-final-report.tar.gz
 
 Vous pouvez aussi envoyer **le dossier complet** qui contiendra le code source.
+La procédure pour cela :
+
+```
+cd ~/dev/bench-php-calculator-cli
+
+mkdir -p benchmark-final-report
+
+cp rapport.log benchmark-final-report/rapport.log
+git log --oneline --reverse > benchmark-final-report/git-log.txt
+git status > benchmark-final-report/git-status.txt
+docker compose run --rm php php tests/CalculatorTest.php > benchmark-final-report/final-tests.txt
+
+tar --exclude='.git' --exclude='vendor' --exclude='var/history.json' \
+  -czf benchmark-final-report.tar.gz \
+  benchmark-final-report \
+  .
+```
+
 
 ---
 
