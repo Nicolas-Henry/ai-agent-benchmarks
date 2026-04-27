@@ -47,7 +47,7 @@ Le dépôt `ai-agent-benchmarks` contient les prompts et les templates.
 Le projet testé doit être dans un **répertoire de travail séparé**, par exemple :
 
 ```text
-~/dev/project1
+~/dev/bench-php-calculator-cli
 ```
 
 Il ne faut pas faire les tests directement dans le dépôt `ai-agent-benchmarks`.
@@ -57,7 +57,7 @@ Schéma recommandé :
 ```text
 ~/dev/
 ├── ai-agent-benchmarks/   # dépôt public avec prompts, templates et résultats
-└── project1/              # projet vide utilisé pour exécuter le benchmark
+└── bench-php-calculator-cli/              # projet vide utilisé pour exécuter le benchmark
 ```
 
 ---
@@ -108,8 +108,8 @@ ls -al
 Créer un projet vide séparé :
 
 ```bash
-mkdir -p ~/dev/project1
-cd ~/dev/project1
+mkdir -p ~/dev/bench-php-calculator-cli
+cd ~/dev/bench-php-calculator-cli
 ```
 
 Initialiser Git :
@@ -230,7 +230,7 @@ FOURNISSEUR_RUNTIME=Ollama Cloud
 SERIE_DE_TESTS=php-calculator-cli
 NOMBRE_DE_TESTS=22
 LANGAGE_CIBLE=PHP 8.4
-PROJET_CIBLE_PATH=/home/nicolas/dev/project1
+PROJET_CIBLE_PATH=/home/nicolas/dev/bench-php-calculator-cli
 BENCHMARK_REPO_URL=https://github.com/Nicolas-Henry/ai-agent-benchmarks
 BENCHMARK_REPO_PATH=/home/nicolas/dev/ai-agent-benchmarks
 FICHIER_PROMPTS=prompts/php-calculator-cli/prompts-benchmark-agents-ia-php-tests-1-22.md
@@ -266,7 +266,7 @@ Nombre total de tests : 22
 Langage cible : PHP 8.4
 
 Projet cible à modifier :
-/home/nicolas/dev/project1
+/home/nicolas/dev/bench-php-calculator-cli
 
 Dépôt public contenant les prompts, templates et résultats :
 https://github.com/Nicolas-Henry/ai-agent-benchmarks
@@ -475,7 +475,7 @@ results/php-calculator-cli/aider-qwen3-coder-480b-cloud.md
 À la fin de la série PHP, le projet cible pourra ressembler à ceci :
 
 ```text
-project1/
+bench-php-calculator-cli/
 ├── bin/
 │   └── calculator.php
 ├── src/
