@@ -196,6 +196,11 @@ git status
 
 # 6. Préparer le prompt d’initialisation
 
+Exemple de commande pour lancer Claude avec un modèle
+```
+claude --model deepseek-v4-flash:cloud --permission-mode auto
+```
+
 Avant de lancer le test 1, envoyer à l’agent le prompt d’initialisation disponible ici :
 
 ```text
