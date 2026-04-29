@@ -54,6 +54,11 @@ TEMPLATE_SYNTHESE=templates/result-summary-template.md
 COMMANDE_TEST_PRINCIPALE=docker compose run --rm php php tests/CalculatorTest.php
 ```
 
+Prompt:
+```
+Voici les variables de prompt; attends mes instructions
+```
+
 ---
 
 # Prompt à envoyer à l’agent
