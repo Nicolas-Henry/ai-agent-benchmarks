@@ -45,7 +45,7 @@ FOURNISSEUR_RUNTIME=Ollama Cloud
 SERIE_DE_TESTS=php-calculator-cli
 NOMBRE_DE_TESTS=22
 LANGAGE_CIBLE=PHP 8.4
-PROJET_CIBLE_PATH=/home/nicolas/dev/project1
+PROJET_CIBLE_PATH=/home/nicolas/dev/bench-php-calculator-cli
 BENCHMARK_REPO_URL=https://github.com/Nicolas-Henry/ai-agent-benchmarks
 BENCHMARK_REPO_PATH=/home/nicolas/dev/ai-agent-benchmarks
 FICHIER_PROMPTS=prompts/php-calculator-cli/prompts-benchmark-agents-ia-php-tests-1-22.md
@@ -84,13 +84,13 @@ Chemin local du dépôt de benchmark, s’il est disponible :
 <BENCHMARK_REPO_PATH>
 
 Fichier de prompts de la série :
-<FICHIER_PROMPTS>
+<BENCHMARK_REPO_PATH>/<FICHIER_PROMPTS>
 
 Template de rapport détaillé :
-<TEMPLATE_RAPPORT>
+<BENCHMARK_REPO_PATH>/<TEMPLATE_RAPPORT>
 
 Template de synthèse finale :
-<TEMPLATE_SYNTHESE>
+<BENCHMARK_REPO_PATH>/<TEMPLATE_SYNTHESE>
 
 Commande de test principale :
 <COMMANDE_TEST_PRINCIPALE>
