@@ -202,9 +202,12 @@ claude --model deepseek-v4-flash:cloud --permission-mode auto
 ```
 
 Avant de lancer le test 1, envoyer à l’agent le prompt d’initialisation disponible ici :
+[](/ai-agent-benchmarks/blob/main/benchmark-init-prompt.md)
+Sur cette page vous aurez un exemple à adapter pour votre cas.
+Puis copier le dans la console Claude : 
 
-```text
-benchmark-init-prompt.md
+```
+Voici les variables de prompt; attends mes instructions : [AJOUTER LES VARIABLES DE PROMPT]
 ```
 
 Ce prompt permet de fixer :
@@ -222,81 +225,28 @@ Ce prompt permet de fixer :
 
 ---
 
-# 7. Exemple de variables pour la série PHP
+# 7. Prompt d’initialisation à envoyer à l’agent
 
-À adapter avant d’envoyer le prompt d’initialisation à l’agent :
-
-```text
-DATE_DU_BENCHMARK=2026-04-27
-AUTEUR=Nicolas Henry
-AGENT_TESTE=Claude Code
-MODELE_TESTE=deepseek-v4-flash:cloud
-FOURNISSEUR_RUNTIME=Ollama Cloud
-SERIE_DE_TESTS=php-calculator-cli
-NOMBRE_DE_TESTS=22
-LANGAGE_CIBLE=PHP 8.4
-PROJET_CIBLE_PATH=/home/nicolas/dev/bench-php-calculator-cli
-BENCHMARK_REPO_URL=https://github.com/Nicolas-Henry/ai-agent-benchmarks
-BENCHMARK_REPO_PATH=/home/nicolas/dev/ai-agent-benchmarks
-FICHIER_PROMPTS=prompts/php-calculator-cli/prompts-benchmark-agents-ia-php-tests-1-22.md
-TEMPLATE_RAPPORT=templates/rapport-log-template.md
-TEMPLATE_SYNTHESE=templates/result-summary-template.md
-COMMANDE_TEST_PRINCIPALE=docker compose run --rm php php tests/CalculatorTest.php
-```
-
----
-
-# 8. Prompt d’initialisation à envoyer à l’agent
-
-Copier le contenu de :
-
-```text
-~/dev/ai-agent-benchmarks/benchmark-init-prompt.md
-```
-
-Puis remplacer les variables.
-
-Exemple de début de prompt à envoyer :
-
-```text
-Tu vas participer à un benchmark d’agent IA de développement.
-
-Date du benchmark : 2026-04-27
-Auteur / évaluateur : Nicolas Henry
-Agent testé : Claude Code
-Modèle testé : deepseek-v4-flash:cloud
-Fournisseur / runtime : Ollama Cloud
-Série de tests : php-calculator-cli
-Nombre total de tests : 22
-Langage cible : PHP 8.4
-
-Projet cible à modifier :
-/home/nicolas/dev/bench-php-calculator-cli
-
-Dépôt public contenant les prompts, templates et résultats :
-https://github.com/Nicolas-Henry/ai-agent-benchmarks
-
-Chemin local du dépôt de benchmark :
-/home/nicolas/dev/ai-agent-benchmarks
-
-Fichier de prompts de la série :
-prompts/php-calculator-cli/prompts-benchmark-agents-ia-php-tests-1-22.md
-
-Template de rapport détaillé :
-templates/rapport-log-template.md
-
-Template de synthèse finale :
-templates/result-summary-template.md
-
-Commande de test principale :
-docker compose run --rm php php tests/CalculatorTest.php
-```
+Toujours sur cette page vous avez un exemple de briefing à copier coller tel quel. Il contient les noms de variables de prompt précédement défini. Cela permet de le copier tel quel.
+[](/ai-agent-benchmarks/blob/main/benchmark-init-prompt.md)
 
 L’agent doit ensuite répondre qu’il attend le prompt du test à exécuter.
 
+Pour être certain qu'il a bien lu (ou qu'il compte les lire au moment voulu) vous pouvez écrire ce prompt:
+
+```
+lire les 22 tests
+```
+
+Réponse possible : 
+```
+Je vais lire les 22 tests depuis le fichier de prompts. Permettez-moi d'accéder au dépôt de
+  benchmark pour voir les prompts.
+```
+
 ---
 
-# 9. Lancer le test 1
+# 8. Lancer le test 1
 
 ## Version manuelle (pour tester manuellement mais passer à la rubrique Version Auto pour aller plus vite)
 
@@ -340,6 +290,8 @@ L'agent saura normalement le récupéer via le dépôt local (prompts/php-calcul
 
 # 10. Vérifier après le test 1
 
+(pas obligatoire car tout sera écrit dans le rapport.log)
+
 Après le retour de l’agent, vérifier manuellement :
 
 ```bash
@@ -358,30 +310,26 @@ Le working tree doit être propre.
 
 ---
 
-# 11. Continuer avec les tests suivants
+# 9. Continuer avec les tests suivants
 
 Répéter le même fonctionnement pour chaque test :
 
 1. envoyer uniquement le prompt du test suivant ; => en Auto écrire simplement "Faire le test 2" 
 2. laisser l’agent travailler ;
-3. vérifier le résultat ;
-4. vérifier `rapport.log` ;
-5. vérifier le commit ;
+3. vérifier le résultat ; (pas obligatoire)
+4. vérifier `rapport.log` ;  (pas obligatoire)
+5. vérifier le commit ;  (pas obligatoire)
 6. passer au test suivant. (Prompt : "Faire le test 3") etc ...
 
 Exemple de prompt (en manuel) :
 
 ```text
-Test 2 — Ajouter subtract()
-Test 3 — Ajouter multiply()
-Test 4 — Ajouter divide() avec exception
-...
-Test 22 — Application sélective de la revue finale
+Faire le test 2
 ```
 
 ---
 
-# 12. Règles importantes pendant les tests
+# 10. Règles importantes pendant les tests
 
 ## Ne pas utiliser PHP local
 
@@ -431,7 +379,7 @@ Ce fichier sert de journal complet pour la synthèse finale.
 
 ---
 
-# 13. Fin de série : récupérer les informations
+# 11. Fin de série : récupérer les informations
 
 Après le test 22 :
 
@@ -451,7 +399,7 @@ Le résultat attendu :
 
 ---
 
-# 14. Créer la synthèse finale par modèle
+# 12. Créer la synthèse finale par modèle
 
 Utiliser le template :
 
@@ -518,7 +466,7 @@ tar --exclude='.git' --exclude='vendor' --exclude='var/history.json' \
 
 ---
 
-# 15. Exemple de structure finale du projet testé
+# 13. Exemple de structure finale du projet testé
 
 À la fin de la série PHP, le projet cible pourra ressembler à ceci :
 
