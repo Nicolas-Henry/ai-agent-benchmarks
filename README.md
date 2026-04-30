@@ -1,7 +1,6 @@
-# ai-agent-benchmarks
-A collection of reproducible benchmarks for AI coding agents, with prompts, test scenarios, and model-by-model results.
-
 # AI Agent Benchmarks
+
+A collection of reproducible benchmarks for AI coding agents, with prompts, test scenarios, and model-by-model results.
 
 Dépôt public de prompts, scénarios de tests et résultats pour comparer des agents IA de développement.
 
@@ -21,7 +20,7 @@ Exemples d’agents ou modèles testables :
 
 ---
 
-# Structure recommandée du dépôt
+## 1. Structure recommandée du dépôt
 
 ```text
 ai-agent-benchmarks/
@@ -40,7 +39,7 @@ ai-agent-benchmarks/
 
 ---
 
-# Principe général
+## 2. Principe général
 
 Le dépôt `ai-agent-benchmarks` contient les prompts et les templates.
 
@@ -62,17 +61,17 @@ Schéma recommandé :
 
 ---
 
-# Prérequis
+## 3. Prérequis
 
-## Côté machine
+(Côté machine Client)
 
-- Linux ou WSL2 Debian/Ubuntu
+- Linux ou WSL2 Debian/Ubuntu (cela devrait aussi fonctionner sur MACOS et WINDOWS)
 - Docker installé
 - Docker Compose v2 installé
 - Git installé
 - Un agent IA de développement installé ou accessible
 
-Vérifier Docker :
+Vérifier Docker en ligne de commande:
 
 ```bash
 docker --version
@@ -87,7 +86,7 @@ git --version
 
 ---
 
-# 1. Cloner le dépôt de benchmark
+## 4. Cloner le dépôt de benchmark
 
 ```bash
 cd ~/dev
@@ -103,9 +102,11 @@ ls -al
 
 ---
 
-# 2. Créer un répertoire de travail vide pour le test
+## 5. Préparer le répertoire de travail vide pour les tests du benchmark
 
-Créer un projet vide séparé :
+### A - Création du dossier de travail et git 
+
+Créer un projet vide séparé (chemin à adapter si besoin) :
 
 ```bash
 mkdir -p ~/dev/bench-php-calculator-cli
@@ -126,7 +127,7 @@ git status
 
 ---
 
-# 3. Associer le projet à Docker
+### B. Associer le projet à Docker
 
 Pour la série `php-calculator-cli`, le projet testé doit disposer d’un environnement Docker avec un service nommé `php`.
 
@@ -159,7 +160,7 @@ PHP 8.4.x (cli)
 
 ---
 
-# 4. Créer le rapport de benchmark
+### C. Créer le rapport de benchmark
 
 Copier le template de rapport depuis le dépôt `ai-agent-benchmarks` vers le projet testé :
 
@@ -177,7 +178,7 @@ Le fichier `rapport.log` sera mis à jour par l’agent après chaque test.
 
 ---
 
-# 5. Premier commit de base
+### D. Créer le premier commit de base
 
 Faire un premier commit avec l’environnement Docker et le rapport initial :
 
@@ -194,7 +195,7 @@ git status
 
 ---
 
-# 6. Préparer le prompt d’initialisation
+## 5. Préparer le prompt d’initialisation
 
 Exemple de commande pour lancer Claude avec un modèle
 ```
@@ -228,7 +229,7 @@ Ce prompt permet de fixer :
 
 ---
 
-# 7. Prompt d’initialisation à envoyer à l’agent
+## 6. Prompt d’initialisation à envoyer à l’agent
 
 Toujours sur cette page vous avez un exemple de briefing à copier coller tel quel. Il contient les noms de variables de prompt précédement défini. Cela permet de le copier tel quel.
 [](/ai-agent-benchmarks/blob/main/benchmark-init-prompt.md)
@@ -249,9 +250,9 @@ Je vais lire les 22 tests depuis le fichier de prompts. Permettez-moi d'accéder
 
 ---
 
-# 8. Lancer le test 1
+## 7. Lancer le test 1
 
-## Version manuelle 
+### Version manuelle 
 
 ==> pour tester manuellement mais vous pouvez passer à la rubrique "Version Auto" pour aller plus vite
 
@@ -287,13 +288,13 @@ git commit -m "test01: create basic calculator project"
 8. afficher le hash du commit final.
 
 ---
-## Version Auto
+### Version Auto
 
 Ecrire simplement "Faire le test 1"
 
 L'agent saura (normalement) le récupéer via le dépôt local (prompts/php-calculator-cli/prompts-benchmark-agents-ia-php-tests-1-22.md) spécifié dans le prompt d'initialisation.
 
-# 10. Vérifier après le test 1
+## 9. Vérification à faire après le test 1
 
 (pas obligatoire car tout sera écrit dans le rapport.log)
 
@@ -315,7 +316,7 @@ Le working tree doit être propre.
 
 ---
 
-# 9. Continuer avec les tests suivants
+## 10. Continuer avec les tests suivants
 
 Répéter le même fonctionnement pour chaque test :
 
@@ -332,11 +333,17 @@ Exemple de prompt (en manuel) :
 Faire le test 2
 ```
 
+Vous pouvez aussi tenter :
+
+```text
+Faire tous les tests du benchmark, assures-toi d'avoir en mémoire les 22 tests avant de commencer.
+```
+
 ---
 
-# 10. Règles importantes pendant les tests
+## 11. Règles importantes pour les tests
 
-## Ne pas utiliser PHP local
+### Ne pas utiliser PHP local
 
 Pour la série PHP, l’agent ne doit pas utiliser :
 
@@ -350,7 +357,7 @@ Il doit utiliser :
 docker compose run --rm php php tests/CalculatorTest.php
 ```
 
-## Ne pas modifier Docker sans demande
+### Ne pas modifier Docker sans demande
 
 Le fichier suivant ne doit pas être modifié sauf demande explicite :
 
@@ -358,13 +365,13 @@ Le fichier suivant ne doit pas être modifié sauf demande explicite :
 docker-compose.yml
 ```
 
-## Faire un commit après chaque test
+### Faire un commit après chaque test
 
 Chaque test doit avoir son commit dédié.
 
 EDIT : Le prompt permet désormais de le faire. Vous n'avez pas besoin de le faire manuellement !
 
-## Mettre à jour `rapport.log`
+### Mettre à jour `rapport.log`
 
 Chaque test ajoutera une entrée dans :
 
@@ -378,7 +385,7 @@ EDIT : Le prompt permet désormais de le faire. Vous n'avez pas besoin de le fai
 
 ---
 
-# 11. Fin de série : récupérer les informations
+## 12. Fin de série : récupérer les informations
 
 Optionnel : car le rapport.log et les fichiers sources qui seront envoyés pour le rapport de benchmark final contiendront les résultats du script.
 
@@ -399,6 +406,8 @@ Le résultat attendu :
 - tests finaux verts.
 
 ---
+
+## 13. Compléter le rapport
 
 Maintenant vous pouvez si vous le souhaitez completer rapport.log avec une section bilan final en utilisant ce prompt (valeurs entre [] sont normalement connues par l'agent; à renseignant le cas échéant):
 
@@ -425,7 +434,7 @@ git commit -m "final: add [nom du modèle] benchmark summary"
 ```
 
 
-# 12. Créer la synthèse finale par modèle
+## 14. Créer la synthèse finale par modèle
 
 Utiliser le template du dépôt :
 
@@ -485,7 +494,7 @@ Utilises le template qui se trouve dans le dépot : templates/result-summary-tem
 
 ---
 
-# 13. Exemple de structure finale du projet testé
+## 15. Information: Exemple de structure finale du projet testé
 
 À la fin de la série PHP, le projet cible pourra ressembler à ceci :
 
@@ -510,7 +519,7 @@ bench-php-calculator-cli/
 
 ---
 
-# 14. Checklist rapide
+## 16. Checklist rapide
 
 Avant le test 1 :
 
