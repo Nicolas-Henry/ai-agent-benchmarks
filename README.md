@@ -195,12 +195,21 @@ git status
 
 ---
 
-## 5. Préparer le prompt d’initialisation
+## 6. Préparer le prompt d’initialisation
 
 Exemple de commande pour lancer Claude avec un modèle
 ```
 claude --model deepseek-v4-flash:cloud --permission-mode auto
 ```
+
+ou
+```
+claude --model qwen3-coder-next:cloud --dangerously-skip-permissions
+```
+
+Afin de passer les questions automatiquement.
+Attention ne pas lancer de cette façon sur un environnement de prod, sur un projet important etc ...
+Là le projet est dans un répertoire cloisonné et il n'est pas important, il fait juste des benchmarks. On peut se faciliter la vie en validant automatiquement les questions de l'agent.
 
 Avant de lancer le test 1, envoyer à l’agent le prompt d’initialisation disponible ici :
 
@@ -229,7 +238,7 @@ Ce prompt permet de fixer :
 
 ---
 
-## 6. Prompt d’initialisation à envoyer à l’agent
+## 7. Prompt d’initialisation à envoyer à l’agent
 
 Toujours sur cette page vous avez un exemple de briefing à copier coller tel quel. Il contient les noms de variables de prompt précédement défini. Cela permet de le copier tel quel.
 
@@ -251,7 +260,7 @@ Je vais lire les 22 tests depuis le fichier de prompts. Permettez-moi d'accéder
 
 ---
 
-## 7. Lancer le test 1
+## 8. Lancer le test 1
 
 ### Version manuelle 
 
