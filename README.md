@@ -456,7 +456,7 @@ results/php-calculator-cli/codex-gpt-5-5.md
 results/php-calculator-cli/aider-qwen3-coder-480b-cloud.md
 ```
 
-Pour cela, vous pouvez utiliser une IA propriétaire comme ChatGpt (5.5) ou Claude avec la procédure suivante
+Pour cela, vous pouvez utiliser une IA propriétaire comme ChatGpt (5.5) ou Claude en appliquant la procédure suivante:
 
 ```
 mkdir -p benchmark-final-report
@@ -469,29 +469,20 @@ docker compose run --rm php php tests/CalculatorTest.php > benchmark-final-repor
 tar -czf benchmark-final-report.tar.gz benchmark-final-report
 ```
 
-Ensuite vous envoyez le fichier compressé à l'IA pour analyse:
-benchmark-final-report.tar.gz
-
-Vous pouvez aussi envoyer **le dossier complet** qui contiendra le code source.
-La procédure pour cela :
+Vous pouvez aussi envoyer **le dossier complet** qui contiendra le code source. Dans ce cas, la dernière ligne devra être remplacée par :
 
 ```
-cd ~/dev/bench-php-calculator-cli
-
-mkdir -p benchmark-final-report
-
-cp rapport.log benchmark-final-report/rapport.log
-git log --oneline --reverse > benchmark-final-report/git-log.txt
-git status > benchmark-final-report/git-status.txt
-docker compose run --rm php php tests/CalculatorTest.php > benchmark-final-report/final-tests.txt
-
 tar --exclude='.git' --exclude='vendor' --exclude='var/history.json' \
   -czf benchmark-final-report.tar.gz \
   benchmark-final-report \
   .
 ```
 
+Ensuite vous envoyez le fichier compressé (benchmark-final-report.tar.gz) à l'IA propriétaire pour analyse:
 
+```text
+Analyse le fichier zip en pièce jointe afin de créer un rapport de benchmark (fichier <agent>-<modele>.md). Il sera destiné à être placé dans results/[NOM DU TEST]/ du dépôt https://github.com/Nicolas-Henry/ai-agent-benchmarks/.
+Utilises le template qui se trouve dans le dépot : templates/result-summary-template.md
 ---
 
 # 13. Exemple de structure finale du projet testé
@@ -519,7 +510,7 @@ bench-php-calculator-cli/
 
 ---
 
-# 16. Checklist rapide
+# 14. Checklist rapide
 
 Avant le test 1 :
 
