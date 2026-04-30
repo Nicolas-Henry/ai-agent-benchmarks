@@ -483,7 +483,8 @@ Ensuite vous envoyez le fichier compressé (benchmark-final-report.tar.gz) à l'
 ```text
 Analyse le fichier zip en pièce jointe afin de créer un rapport de benchmark (fichier <agent>-<modele>.md). Il sera destiné à être placé dans results/[NOM DU TEST]/ du dépôt https://github.com/Nicolas-Henry/ai-agent-benchmarks/.
 Utilises le template qui se trouve dans le dépot : templates/result-summary-template.md
-``
+```
+
 ---
 
 # 13. Exemple de structure finale du projet testé
