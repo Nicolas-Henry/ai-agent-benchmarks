@@ -17,6 +17,16 @@
 Remplace les valeurs entre chevrons avant d’envoyer ce prompt à l’agent.
 
 ```text
+
+Ne fais aucune action pour le moment.
+Ne lis aucun fichier.
+Ne liste aucun dossier.
+Ne lance aucune commande.
+Ne modifie rien.
+Ne fais aucun commit.
+
+Voici les variables du benchmark. Tu dois seulement les mémoriser pour la suite et attendre mon prochain message.
+
 DATE_DU_BENCHMARK=<AAAA-MM-JJ>
 AUTEUR=<Nom ou pseudo de la personne qui lance le benchmark>
 AGENT_TESTE=<Claude Code / Codex CLI / Aider / OpenCode / autre>
@@ -32,20 +42,24 @@ FICHIER_PROMPTS=<chemin du fichier de prompts de la série>
 TEMPLATE_RAPPORT=<templates/rapport-log-template.md>
 TEMPLATE_SYNTHESE=<templates/result-summary-template.md>
 COMMANDE_TEST_PRINCIPALE=<commande de test principale>
+
+Important :
+- PROJET_CIBLE_PATH est un dossier, pas un fichier.
+- BENCHMARK_REPO_PATH est un dossier, pas un fichier.
+- FICHIER_PROMPTS est un fichier.
+- TEMPLATE_RAPPORT est un fichier.
+- TEMPLATE_SYNTHESE est un fichier.
+- Tu dois exécuter uniquement le test que je collerai ensuite.
+- Tu ne dois jamais inventer le test suivant.
+- Tu ne dois jamais commencer un test sans le prompt complet du test.
+
+Réponds uniquement :
+"Contexte compris. J’attends le prompt du test à exécuter."
 ```
 
-Exemple pour la série PHP :
+Exemple de variables pour la série PHP :
 
 ```text
-Ne fais aucune action pour le moment.
-Ne lis aucun fichier.
-Ne liste aucun dossier.
-Ne lance aucune commande.
-Ne modifie rien.
-Ne fais aucun commit.
-
-Voici les variables du benchmark. Tu dois seulement les mémoriser pour la suite et attendre mon prochain message.
-
 DATE_DU_BENCHMARK=2026-04-30
 AUTEUR=Nicolas Henry
 AGENT_TESTE=Claude Code
@@ -61,19 +75,8 @@ FICHIER_PROMPTS=/home/nicolas/dev/ai-agent-benchmarks/prompts/php-calculator-cli
 TEMPLATE_RAPPORT=/home/nicolas/dev/ai-agent-benchmarks/templates/rapport-log-template.md
 TEMPLATE_SYNTHESE=/home/nicolas/dev/ai-agent-benchmarks/templates/result-summary-template.md
 COMMANDE_TEST_PRINCIPALE=docker compose run --rm php php tests/CalculatorTest.php
-
-Important :
-- PROJET_CIBLE_PATH est un dossier, pas un fichier.
-- BENCHMARK_REPO_PATH est un dossier, pas un fichier.
-- FICHIER_PROMPTS est un fichier.
-- TEMPLATE_RAPPORT est un fichier.
-- TEMPLATE_SYNTHESE est un fichier.
-- Tu dois exécuter uniquement le test que je collerai ensuite.
 - Tu ne dois jamais inventer le test suivant.
 - Tu ne dois jamais commencer un test sans le prompt complet du test.
-
-Réponds uniquement :
-"Contexte compris. J’attends le prompt du test à exécuter."
 ```
 
 ---
