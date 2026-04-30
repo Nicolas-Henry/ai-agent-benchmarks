@@ -417,7 +417,7 @@ Le résultat attendu :
 
 ---
 
-## 13. Compléter le rapport
+## 13. Compléter le rapport avec un bilan final
 
 Maintenant vous pouvez si vous le souhaitez completer rapport.log avec une section bilan final en utilisant ce prompt (valeurs entre [] sont normalement connues par l'agent; à renseignant le cas échéant):
 
