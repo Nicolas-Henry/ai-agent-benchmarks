@@ -220,8 +220,10 @@ Sur cette page vous aurez un exemple à adapter pour votre cas. Copier le dans u
 Puis copier le code dans la console Claude : 
 
 ```
-Voici les variables de prompt; attends mes instructions : [AJOUTER LES VARIABLES DE PROMPT] (coller)
+Voici les variables de prompt.
+Après avoir reçu ces variables, ne commence aucun test automatiquement. Contente-toi de confirmer que le contexte est compris, puis attends le prompt du test à exécuter.
 ```
+Puis collez les variables de prompt.
 
 Ce prompt permet de fixer :
 
