@@ -232,7 +232,8 @@ Ce prompt permet de fixer :
 ## 6. Prompt d’initialisation à envoyer à l’agent
 
 Toujours sur cette page vous avez un exemple de briefing à copier coller tel quel. Il contient les noms de variables de prompt précédement défini. Cela permet de le copier tel quel.
-[](/ai-agent-benchmarks/blob/main/benchmark-init-prompt.md)
+
+[benchmark init prompt MD](https://github.com/Nicolas-Henry/ai-agent-benchmarks/blob/main/benchmark-init-prompt.md)
 
 L’agent doit ensuite répondre qu’il attend le prompt du test à exécuter.
 
