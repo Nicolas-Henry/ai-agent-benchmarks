@@ -402,6 +402,31 @@ Le résultat attendu :
 
 ---
 
+Maintenant vous pouvez si vous le souhaitez completer rapport.log avec une section bilan final en utilisant ce prompt (variable à renseigner):
+
+```
+N’écris pas un long rapport.
+
+Ajoute simplement à la fin de rapport.log une section "Bilan final" courte avec :
+- modèle testé : [Nom du modèle]
+- agent : Claude Code
+- résultat : [XX/YY] tests terminés
+- nombre final de tests automatisés si connu
+- durée totale approximative : si connu
+- architecture finale
+- principales forces
+- principales réserves
+- verdict global
+
+Ne relis pas tout le projet.
+Ne modifie aucun fichier sauf rapport.log.
+
+Ensuite fais :
+git add rapport.log
+git commit -m "final: add [nom du modèle] benchmark summary"
+```
+
+
 # 12. Créer la synthèse finale par modèle
 
 Utiliser le template :
