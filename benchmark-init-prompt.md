@@ -48,9 +48,9 @@ LANGAGE_CIBLE=PHP 8.4
 PROJET_CIBLE_PATH=/home/nicolas/dev/bench-php-calculator-cli
 BENCHMARK_REPO_URL=https://github.com/Nicolas-Henry/ai-agent-benchmarks
 BENCHMARK_REPO_PATH=/home/nicolas/dev/ai-agent-benchmarks
-FICHIER_PROMPTS=prompts/php-calculator-cli/prompts-benchmark-agents-ia-php-tests-1-22.md
-TEMPLATE_RAPPORT=templates/rapport-log-template.md
-TEMPLATE_SYNTHESE=templates/result-summary-template.md
+FICHIER_PROMPTS=/home/nicolas/dev/ai-agent-benchmarks/prompts/php-calculator-cli/prompts-tests-1-22.md
+TEMPLATE_RAPPORT=/home/nicolas/dev/ai-agent-benchmarks/templates/rapport-log-template.md
+TEMPLATE_SYNTHESE=/home/nicolas/dev/ai-agent-benchmarks/templates/result-summary-template.md
 COMMANDE_TEST_PRINCIPALE=docker compose run --rm php php tests/CalculatorTest.php
 ```
 
