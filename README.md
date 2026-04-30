@@ -400,14 +400,14 @@ Le résultat attendu :
 
 ---
 
-Maintenant vous pouvez si vous le souhaitez completer rapport.log avec une section bilan final en utilisant ce prompt (variable à renseigner):
+Maintenant vous pouvez si vous le souhaitez completer rapport.log avec une section bilan final en utilisant ce prompt (valeurs entre [] sont normalement connues par l'agent; à renseignant le cas échéant):
 
 ```
 N’écris pas un long rapport.
 
 Ajoute simplement à la fin de rapport.log une section "Bilan final" courte avec :
 - modèle testé : [Nom du modèle]
-- agent : Claude Code
+- agent : [Nom de l'agent]
 - résultat : [XX/YY] tests terminés
 - nombre final de tests automatisés si connu
 - durée totale approximative : si connu
