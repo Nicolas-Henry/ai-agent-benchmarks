@@ -19,7 +19,7 @@ Remplace les valeurs entre chevrons avant d’envoyer ce prompt à l’agent.
 ```text
 
 Ne fais aucune action pour le moment.
-Ne lis aucun fichier.
+Lis le fichier prompt et autres fichiers si besoin.
 Ne liste aucun dossier.
 Ne lance aucune commande.
 Ne modifie rien.
