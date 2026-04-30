@@ -429,13 +429,13 @@ git commit -m "final: add [nom du modèle] benchmark summary"
 
 # 12. Créer la synthèse finale par modèle
 
-Utiliser le template :
+Utiliser le template du dépôt :
 
 ```text
 templates/result-summary-template.md
 ```
 
-Créer un fichier dans :
+Créer un fichier dans du dépôt :
 
 ```text
 results/php-calculator-cli/
