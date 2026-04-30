@@ -251,7 +251,9 @@ Je vais lire les 22 tests depuis le fichier de prompts. Permettez-moi d'accéder
 
 # 8. Lancer le test 1
 
-## Version manuelle (pour tester manuellement mais passer à la rubrique Version Auto pour aller plus vite)
+## Version manuelle 
+
+==> pour tester manuellement mais vous pouvez passer à la rubrique "Version Auto" pour aller plus vite
 
 Ouvrir le fichier de prompts :
 
@@ -289,7 +291,7 @@ git commit -m "test01: create basic calculator project"
 
 Ecrire simplement "Faire le test 1"
 
-L'agent saura normalement le récupéer via le dépôt local (prompts/php-calculator-cli/prompts-benchmark-agents-ia-php-tests-1-22.md) spécifié dans le prompt d'initialisation.
+L'agent saura (normalement) le récupéer via le dépôt local (prompts/php-calculator-cli/prompts-benchmark-agents-ia-php-tests-1-22.md) spécifié dans le prompt d'initialisation.
 
 # 10. Vérifier après le test 1
 
@@ -360,19 +362,11 @@ docker-compose.yml
 
 Chaque test doit avoir son commit dédié.
 
-Exemple :
-
-```text
-test01: create basic calculator project
-test02: add subtract operation
-test03: add multiply operation
-...
-test22: apply selected final review improvements
-```
+EDIT : Le prompt permet désormais de le faire. Vous n'avez pas besoin de le faire manuellement !
 
 ## Mettre à jour `rapport.log`
 
-Chaque test doit ajouter une entrée dans :
+Chaque test ajoutera une entrée dans :
 
 ```text
 rapport.log
@@ -380,9 +374,13 @@ rapport.log
 
 Ce fichier sert de journal complet pour la synthèse finale.
 
+EDIT : Le prompt permet désormais de le faire. Vous n'avez pas besoin de le faire manuellement !
+
 ---
 
 # 11. Fin de série : récupérer les informations
+
+Optionnel : car le rapport.log et les fichiers sources qui seront envoyés pour le rapport de benchmark final contiendront les résultats du script.
 
 Après le test 22 :
 
