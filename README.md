@@ -202,7 +202,9 @@ claude --model deepseek-v4-flash:cloud --permission-mode auto
 ```
 
 Avant de lancer le test 1, envoyer à l’agent le prompt d’initialisation disponible ici :
-[benchmark init prompt MD](/ai-agent-benchmarks/blob/main/benchmark-init-prompt.md)
+
+[benchmark init prompt MD](https://github.com/Nicolas-Henry/ai-agent-benchmarks/blob/main/benchmark-init-prompt.md)
+
 Sur cette page vous aurez un exemple à adapter pour votre cas. Copier le dans un éditeur de texte et changer les valeurs des variables.
 
 Puis copier le code dans la console Claude : 
