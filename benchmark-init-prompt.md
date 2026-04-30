@@ -63,6 +63,8 @@ Voici les variables de prompt; attends mes instructions
 
 # Prompt à envoyer à l’agent
 
+A copier tel quel dans la console de l'agent.
+
 ```text
 Tu vas participer à un benchmark d’agent IA de développement.
 
