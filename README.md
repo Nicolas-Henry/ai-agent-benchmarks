@@ -193,6 +193,23 @@ Vérifier que le dossier est propre :
 git status
 ```
 
+### E. Garde-fous optionnels pour Claude Code
+
+Pour certains modèles qui ont tendance à perdre le fil du protocole, il est possible d’ajouter un fichier `CLAUDE.md` dans le projet testé.
+
+Un template spécifique à la série `php-calculator-cli` est disponible ici :
+
+```text
+templates/php-calculator-cli/CLAUDE-benchmark-guardrails.md
+```
+
+Utilisation:
+
+```text
+cp ~/dev/ai-agent-benchmarks/templates/php-calculator-cli/CLAUDE-benchmark-guardrails.md \
+   ~/dev/bench-php-calculator-cli/CLAUDE.md
+```
+
 ---
 
 ## 6. Préparer le prompt d’initialisation
