@@ -104,6 +104,43 @@ ls -al
 
 ## 5. Préparer le répertoire de travail vide pour les tests du benchmark
 
+### Option rapide : script de préparation
+
+La préparation manuelle du répertoire de travail peut être remplacée par un script.
+
+Depuis le dépôt `ai-agent-benchmarks` :
+
+```bash
+chmod +x scripts/setup-php-calculator-cli-workspace.sh
+```
+
+Plusieurs possibilités :
+
+Créer le workspace :
+
+```bash
+./scripts/setup-php-calculator-cli-workspace.sh \
+  --workspace "$HOME/dev/bench-php-calculator-cli"
+```
+
+Créer le workspace avec les garde-fous Claude Code :
+
+```bash
+./scripts/setup-php-calculator-cli-workspace.sh \
+  --workspace "$HOME/dev/bench-php-calculator-cli" \
+  --with-claude-guardrails
+```
+
+Recréer un workspace propre :
+
+```bash
+./scripts/setup-php-calculator-cli-workspace.sh \
+  --workspace "$HOME/dev/bench-php-calculator-cli" \
+  --with-claude-guardrails \
+  --force
+```
+  
+
 ### A - Création du dossier de travail et git 
 
 Créer un projet vide séparé (chemin à adapter si besoin) :
